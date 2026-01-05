@@ -15,7 +15,8 @@ const spices = [
   {
     name: 'Coffee',
     latin: 'Coffea arabica',
-    description: 'Premium roasted coffee beans with rich, bold flavor and aromatic qualities. Known for its energizing properties and complex taste profile.',
+    description:
+      'Premium roasted coffee beans with rich, bold flavor and aromatic qualities. Known for its energizing properties and complex taste profile.',
     origin: 'Srilanka',
     uses: 'Espresso, Brewed coffee, Cold brew, Coffee-based desserts',
     image: coffeeImage,
@@ -23,7 +24,8 @@ const spices = [
   {
     name: 'Cinnamon',
     latin: 'Cinnamomum verum',
-    description: 'Sweet, warming spice from the inner bark of trees. Known for blood sugar regulation and antioxidant properties with distinctive aroma.',
+    description:
+      'Sweet, warming spice from the inner bark of trees. Known for blood sugar regulation and antioxidant properties with distinctive aroma.',
     origin: 'Sri Lanka',
     uses: 'Baking, Beverages, Stews, Spice blends',
     image: cinnamonImage,
@@ -31,7 +33,8 @@ const spices = [
   {
     name: 'Cardamom',
     latin: 'Elettaria cardamomum',
-    description: 'The queen of spices with an intense, slightly sweet flavor. Prized for its aromatic qualities in both sweet and savory dishes.',
+    description:
+      'The queen of spices with an intense, slightly sweet flavor. Prized for its aromatic qualities in both sweet and savory dishes.',
     origin: 'Srilanka',
     uses: 'Desserts, Chai tea, Rice dishes, Meat marinades',
     image: cardamomImage,
@@ -39,7 +42,8 @@ const spices = [
   {
     name: 'Pepper Seed',
     latin: 'Piper nigrum',
-    description: 'The king of spices with a sharp, pungent flavor. Essential for countless cuisines and known for aiding digestion and enhancing flavors.',
+    description:
+      'The king of spices with a sharp, pungent flavor. Essential for countless cuisines and known for aiding digestion and enhancing flavors.',
     origin: 'Srilanka',
     uses: 'Universal seasoning, Pepper sauces, Meat rubs, Pickling',
     image: pepperImage,
@@ -47,7 +51,8 @@ const spices = [
   {
     name: 'Cloves',
     latin: 'Syzygium aromaticum',
-    description: 'Aromatic dried flower buds with intense, warm flavor. Rich in antioxidants and used in both culinary and medicinal applications.',
+    description:
+      'Aromatic dried flower buds with intense, warm flavor. Rich in antioxidants and used in both culinary and medicinal applications.',
     origin: 'Srilanka',
     uses: 'Spice blends, Baking, Mulled beverages, Meat dishes',
     image: clovesImage,
@@ -55,7 +60,8 @@ const spices = [
   {
     name: 'Green Tea',
     latin: 'Camellia sinensis',
-    description: 'Premium green tea leaves with delicate, fresh flavor. Rich in antioxidants and known for numerous health benefits and calming properties.',
+    description:
+      'Premium green tea leaves with delicate, fresh flavor. Rich in antioxidants and known for numerous health benefits and calming properties.',
     origin: 'Srilanka',
     uses: 'Hot tea, Iced tea, Matcha lattes, Tea ceremonies',
     image: greenTeaImage,
@@ -63,7 +69,8 @@ const spices = [
   {
     name: 'Ceylon Tea',
     latin: 'Camellia sinensis',
-    description: 'Premium black tea from Sri Lanka with bright, citrusy notes. Known for its distinctive flavor profile and rich amber color.',
+    description:
+      'Premium black tea from Sri Lanka with bright, citrusy notes. Known for its distinctive flavor profile and rich amber color.',
     origin: 'Sri Lanka',
     uses: 'Hot tea, Iced tea, Tea blends, Chai',
     image: ceylonTeaImage,
@@ -78,10 +85,7 @@ const Products = () => {
     const ctx = gsap.context(() => {
       // Heading animations
       gsap.from('.products-heading', {
-        scrollTrigger: {
-          trigger: '.products-heading',
-          start: 'top 80%',
-        },
+        scrollTrigger: { trigger: '.products-heading', start: 'top 80%' },
         opacity: 0,
         y: 50,
         duration: 1,
@@ -89,10 +93,7 @@ const Products = () => {
       });
 
       gsap.from('.products-subtitle', {
-        scrollTrigger: {
-          trigger: '.products-subtitle',
-          start: 'top 80%',
-        },
+        scrollTrigger: { trigger: '.products-subtitle', start: 'top 80%' },
         opacity: 0,
         y: 30,
         duration: 1,
@@ -104,15 +105,11 @@ const Products = () => {
       spices.forEach((_, index) => {
         const card = `.spice-card-${index}`;
         const line = linesRef.current[index];
-        
+
         // Animate connecting line
         if (line) {
           gsap.from(line, {
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              scrub: 1,
-            },
+            scrollTrigger: { trigger: card, start: 'top 85%', scrub: 1 },
             scaleY: 0,
             transformOrigin: 'top center',
             duration: 1.2,
@@ -120,14 +117,9 @@ const Products = () => {
           });
         }
 
-        // Animate card with scroll up effect
+        // Animate card
         gsap.from(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            end: 'top 30%',
-            scrub: 0.5,
-          },
+          scrollTrigger: { trigger: card, start: 'top 85%', end: 'top 30%', scrub: 0.5 },
           opacity: 0,
           y: 100,
           x: index % 2 === 0 ? -30 : 30,
@@ -135,14 +127,9 @@ const Products = () => {
           ease: 'power3.out',
         });
 
-        // Animate image with parallax scroll
+        // Animate image with parallax
         gsap.from(`${card} .spice-image`, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            end: 'top 30%',
-            scrub: 0.8,
-          },
+          scrollTrigger: { trigger: card, start: 'top 85%', end: 'top 30%', scrub: 0.8 },
           scale: 0.9,
           opacity: 0,
           y: 60,
@@ -150,14 +137,9 @@ const Products = () => {
           ease: 'power2.out',
         });
 
-        // Animate content with delayed scroll up
+        // Animate content
         gsap.from(`${card} .spice-content`, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            end: 'top 35%',
-            scrub: 0.6,
-          },
+          scrollTrigger: { trigger: card, start: 'top 85%', end: 'top 35%', scrub: 0.6 },
           opacity: 0,
           y: 50,
           duration: 1,
@@ -172,6 +154,7 @@ const Products = () => {
   return (
     <section ref={sectionRef} id="products" className="py-32 bg-background">
       <div className="container mx-auto px-6">
+        {/* Heading */}
         <div className="text-center mb-20">
           <h2 className="products-heading text-6xl md:text-7xl font-bold text-foreground tracking-tight mb-6">
             OUR COLLECTION
@@ -182,6 +165,7 @@ const Products = () => {
           </p>
         </div>
 
+        {/* Spice Cards */}
         <div className="max-w-6xl mx-auto space-y-24">
           {spices.map((spice, index) => {
             const isEven = index % 2 === 0;
@@ -190,7 +174,7 @@ const Products = () => {
               <div key={index} className="relative">
                 {/* Connecting Line */}
                 {index < spices.length - 1 && (
-                  <div 
+                  <div
                     ref={(el) => (linesRef.current[index] = el)}
                     className="absolute left-1/2 bottom-0 w-px h-32 bg-foreground/20 transform translate-y-full hidden md:block"
                   ></div>
@@ -227,9 +211,7 @@ const Products = () => {
                         <div className="h-px bg-foreground w-16 mb-6"></div>
                       </div>
 
-                      <p className="text-lg text-foreground/80 leading-relaxed">
-                        {spice.description}
-                      </p>
+                      <p className="text-lg text-foreground/80 leading-relaxed">{spice.description}</p>
 
                       <div className="space-y-4 pt-4">
                         <div className="flex gap-4">
