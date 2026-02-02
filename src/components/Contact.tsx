@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Instagram, Facebook, ShoppingBag, Store } from 'lucide-react';
 import { toast } from 'sonner';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -73,7 +73,7 @@ const Contact = () => {
     e.preventDefault();
     
     const whatsappMessage = `Hello! I'm interested in placing an order.%0A%0AName: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AMessage: ${formData.message}`;
-    const whatsappUrl = `https://wa.me/1234567890?text=${whatsappMessage}`;
+    const whatsappUrl = `https://wa.me/773800558?text=${whatsappMessage}`;
     
     window.open(whatsappUrl, '_blank');
     
@@ -115,10 +115,75 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold text-foreground mb-2 tracking-wider uppercase text-sm">Email</p>
                     <a 
-                      href="mailto:orders@purespices.com" 
+                      href="mailto:spiceaurainternational25@gmail.com" 
                       className="text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      orders@purespices.com
+                      spiceaurainternational25@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Shopify */}
+                <div className="flex items-start gap-6 group">
+                  <div className="w-16 h-16 border border-border flex items-center justify-center group-hover:bg-foreground transition-colors duration-500">
+                    <Store className="w-6 h-6 text-foreground group-hover:text-background transition-colors duration-500" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground mb-2 uppercase text-sm">Shopify</p>
+                    <a href="https://yourstore.myshopify.com" target="_blank" className="text-muted-foreground hover:text-foreground">
+                      Visit our Shopify Store
+                    </a>
+                  </div>
+                </div>
+
+                {/* eBay */}
+                <div className="flex items-start gap-6 group">
+                  <div className="w-16 h-16 border border-border flex items-center justify-center flex-shrink-0 group-hover:bg-foreground transition-colors duration-500">
+                    <ShoppingBag className="w-6 h-6 text-foreground group-hover:text-background transition-colors duration-500" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground mb-2 tracking-wider uppercase text-sm">eBay</p>
+                    <a
+                      href="https://www.ebay.com"
+                      target="_blank"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Visit our eBay Store
+                    </a>
+                  </div>
+                </div>
+
+                
+                {/* Instagram */}
+                <div className="flex items-start gap-6 group">
+                  <div className="w-16 h-16 border border-border flex items-center justify-center flex-shrink-0 group-hover:bg-foreground transition-colors duration-500">
+                    <Instagram className="w-6 h-6 text-foreground group-hover:text-background transition-colors duration-500" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground mb-2 tracking-wider uppercase text-sm">Instagram</p>
+                    <a
+                      href="https://www.instagram.com/royalauraspeices?igsh=MnN2ZGE0NWo1aTY%3D&utm_source=qr"
+                      target="_blank"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Follow us on Instagram
+                    </a>
+                  </div>
+                </div>
+
+                {/* Facebook */}
+                <div className="flex items-start gap-6 group">
+                  <div className="w-16 h-16 border border-border flex items-center justify-center flex-shrink-0 group-hover:bg-foreground transition-colors duration-500">
+                    <Facebook className="w-6 h-6 text-foreground group-hover:text-background transition-colors duration-500" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground mb-2 tracking-wider uppercase text-sm">Facebook</p>
+                    <a
+                      href="https://www.facebook.com"
+                      target="_blank"
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Like us on Facebook
                     </a>
                   </div>
                 </div>
@@ -133,7 +198,7 @@ const Contact = () => {
                       href="tel:+1234567890" 
                       className="text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      +1 (234) 567-890
+                      +94 77 380 0558
                     </a>
                   </div>
                 </div>

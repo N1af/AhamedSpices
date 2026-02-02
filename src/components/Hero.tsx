@@ -3,7 +3,9 @@ import { gsap } from 'gsap';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 import heroImage from '@/assets/hero-minimal.jpg';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo1.png';
+
+
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);

@@ -17,13 +17,55 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* 📍 Product locations positioned inside Sri Lanka shape */
 const spices = [
-  { name: "Coffee", slug: "coffee", top: "65%", left: "65%", image: coffeeImage },
-  { name: "Cinnamon", slug: "cinnamon", top: "55%", left: "40%", image: cinnamonImage },
-  { name: "Cardamom", slug: "cardamom", top: "35%", left: "40%", image: cardamomImage },
-  { name: "Pepper Seed", slug: "pepper-seed", top: "40%", left: "50%", image: pepperImage },
-  { name: "Cloves", slug: "cloves", top: "20%", left: "48%", image: clovesImage },
-  { name: "Green Tea", slug: "green-tea", top: "70%", left: "47%", image: greenTeaImage },
-  { name: "Ceylon Tea", slug: "ceylon-tea", top: "50%", left: "55%", image: ceylonTeaImage },
+  {
+    name: "Coffee",
+    slug: "coffee",
+    top: "65%",
+    left: "65%",
+    image: coffeeImage,
+  },
+  {
+    name: "Cinnamon",
+    slug: "cinnamon",
+    top: "55%",
+    left: "40%",
+    image: cinnamonImage,
+  },
+  {
+    name: "Cardamom",
+    slug: "cardamom",
+    top: "35%",
+    left: "40%",
+    image: cardamomImage,
+  },
+  {
+    name: "Pepper Seed",
+    slug: "pepper-seed",
+    top: "40%",
+    left: "50%",
+    image: pepperImage,
+  },
+  {
+    name: "Cloves",
+    slug: "cloves",
+    top: "20%",
+    left: "48%",
+    image: clovesImage,
+  },
+  {
+    name: "Green Tea",
+    slug: "green-tea",
+    top: "70%",
+    left: "47%",
+    image: greenTeaImage,
+  },
+  {
+    name: "Ceylon Tea",
+    slug: "ceylon-tea",
+    top: "50%",
+    left: "55%",
+    image: ceylonTeaImage,
+  },
 ];
 
 const features = [
@@ -48,8 +90,7 @@ const features = [
   {
     icon: Globe,
     title: "Global Reach",
-    description:
-      "Delivering authentic spices to customers worldwide with care",
+    description: "Delivering authentic spices to customers worldwide with care",
   },
 ];
 
@@ -118,7 +159,6 @@ const About = () => {
   return (
     <section ref={sectionRef} id="about" className="py-32 bg-gradient-subtle">
       <div className="container mx-auto px-6">
-
         {/* 🇱🇰 Sri Lanka Shape Map */}
         <div className="max-w-6xl mx-auto mb-32 text-center">
           <h2 className="map-heading text-5xl md:text-6xl font-bold text-foreground mb-12 tracking-tight">
@@ -143,14 +183,20 @@ const About = () => {
                   left: spice.left,
                   transform: "translate(-50%, -50%)",
                 }}
-         
+                onClick={() => {
+                  document
+                    .getElementById(spice.slug)
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
               >
                 <img
                   src={spice.image}
                   alt={spice.name}
                   className="w-12 h-12 rounded-full border-2 border-white shadow-md mb-2"
                 />
-                <span className="text-xs font-medium text-foreground">{spice.name}</span>
+                <span className="text-xs font-medium text-foreground">
+                  {spice.name}
+                </span>
               </div>
             ))}
           </div>
@@ -166,13 +212,15 @@ const About = () => {
 
           <div className="about-text space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              For over three generations, we have been crafting the finest spices with unwavering
-              dedication to quality and authenticity. Our journey began in the fertile lands where
-              tradition meets innovation.
+              For over three generations, we have been crafting the finest
+              spices with unwavering dedication to quality and authenticity. Our
+              journey began in the fertile lands where tradition meets
+              innovation.
             </p>
             <p>
-              Every spice we produce tells a story – from careful cultivation on organic farms
-              to meticulous processing that preserves natural essence and aromatic richness.
+              Every spice we produce tells a story – from careful cultivation on
+              organic farms to meticulous processing that preserves natural
+              essence and aromatic richness.
             </p>
           </div>
         </div>
@@ -186,7 +234,10 @@ const About = () => {
                 <div className="relative p-8 bg-background border border-border hover:shadow-card transition-all duration-500 h-full">
                   <div className="absolute top-0 left-0 w-full h-1 bg-foreground scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-                  <Icon className="w-12 h-12 text-foreground mb-6" strokeWidth={1.5} />
+                  <Icon
+                    className="w-12 h-12 text-foreground mb-6"
+                    strokeWidth={1.5}
+                  />
 
                   <h3 className="text-xl font-bold text-foreground mb-4 tracking-tight">
                     {feature.title}
@@ -200,7 +251,6 @@ const About = () => {
             );
           })}
         </div>
-
       </div>
     </section>
   );
